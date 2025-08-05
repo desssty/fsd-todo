@@ -1,3 +1,3 @@
-export default function TodoDetailsPage() {
+export const TodoDetailsPage = () => {
   return <div>TodoDetailsPage</div>;
-}
+};

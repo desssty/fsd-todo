@@ -1,1 +1,1 @@
-export { default as TodoDetailsPage } from "./ui";
+export { TodoDetailsPage } from "./ui";
