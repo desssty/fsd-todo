@@ -1,69 +1,40 @@
-# React + TypeScript + Vite
+# FSD Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FSD Todo List** is a learning project built using the **Feature-Sliced Design (FSD)** architecture approach. It demonstrates a modular and scalable structure for frontend applications using **React**, **MobX**, and **TypeScript**.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React 19](https://react.dev/)
+- [MobX](https://mobx.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Router v7](https://reactrouter.com/en/main)
+- [Ant Design](https://ant.design/)
+- [Vite](https://vitejs.dev/)
 
-## Expanding the ESLint configuration
+## 📦 Project Structure (FSD)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The project follows the **Feature-Sliced Design** methodology, which organizes code by purpose and responsibility:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `app/` – App initialization and root-level configuration
+- `pages/` – Application pages
+- `features/` – Business logic units (tasks, etc.)
+- `entities/` – Core domain entities and models
+- `shared/` – Shared resources (UI components, utilities, API, etc.)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## ⚙️ Available Scripts
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🙏 Credits
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project was created as part of a learning process and was inspired by:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 🎥 YouTube video: [Feature-Sliced Design: Методология разработки фронтенд-приложений](https://www.youtube.com/watch?v=Rgqb__EHK-Q)  
+  Author: WebStack - Frontend
+
+- 📂 Reference repository: [github.com/vosdux/fsd-react-mobx](https://github.com/vosdux/fsd-react-mobx)
+
+> ⚠️ This is a non-production educational project intended for exploring frontend architecture and MobX state management.

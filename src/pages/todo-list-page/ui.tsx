@@ -1,7 +1,9 @@
-import { Result, Row, Space, Spin } from "antd";
-import { taskModel, TaskRow } from "entities/task";
+import { Result, Space, Spin } from "antd";
+import { taskModel } from "entities/task";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
+import { TaskList } from "widgets/task-list";
+import { TaskFilter } from "features/task-filter";
 
 export const TodoListPage = observer(() => {
   const {
@@ -18,16 +20,8 @@ export const TodoListPage = observer(() => {
 
   return (
     <Space direction="vertical">
-      <p>filter</p>
-      {isLoading ? (
-        <Spin />
-      ) : (
-        taskList.map((task) => (
-          <Row>
-            <TaskRow key={task.id} title={task.title} id={task.id} />
-          </Row>
-        ))
-      )}
+      <TaskFilter onChange={getTaskList} />
+      {isLoading ? <Spin /> : <TaskList tasks={taskList} />}
     </Space>
   );
 });
